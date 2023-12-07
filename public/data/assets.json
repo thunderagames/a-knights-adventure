@@ -1,83 +1,93 @@
 {
     "image": [
         {
-            "key": "test",
-            "url": "img/loader-pack/loading_bar_full.png"
+            "key": "fog",
+            "url": "img/fog.png"
         },
         {
-            "key": "test1",
-            "url": "img/loader-pack/loading_bar_full.png"
+            "key": "ImgCloudsNight1",
+            "url": "img/clouds/night_1.png"
         },
         {
-            "key": "test2",
-            "url": "img/loader-pack/loading_bar_full.png"
+            "key": "ImgCloudsNight2",
+            "url": "img/clouds/night_2.png"
         },
         {
-            "key": "test3",
-            "url": "img/loader-pack/loading_bar_full.png"
+            "key": "ImgCloudsNight3",
+            "url": "img/clouds/night_3.png"
         },
         {
-            "key": "test4",
-            "url": "img/loader-pack/loading_bar_full.png"
+            "key": "ImgCloudsNight4",
+            "url": "img/clouds/night_4.png"
         },
         {
-            "key": "test5",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test6",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test7",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test8",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test9",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test0",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test00",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test99",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test88",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test77",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test66",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test55",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test44",
-            "url": "img/loader-pack/loading_bar_full.png"
-        },
-        {
-            "key": "test33",
-            "url": "img/loader-pack/loading_bar_full.png"
+            "key": "ImgThunderaLogo",
+            "url": "img/thundera_logo.png"
         }
     ],
-    "spritesheet": [],
-    "audio": [],
+    "spritesheet": [
+        {
+            "key": "SprCharacterStand",
+            "url": "img/character.png",
+            "frameConfig": {
+                "frameWidth": 25,
+                "frameHeight": 40
+            }
+        },
+        {
+            "key": "SprCharacterRun",
+            "url": "img/character-run.png",
+            "frameConfig": {
+                "frameWidth": 30,
+                "frameHeight": 40
+            }
+        },
+        {
+            "key": "SprCharacterJump",
+            "url": "img/character-jump.png",
+            "frameConfig": {
+                "frameWidth": 30,
+                "frameHeight": 40
+            }
+        },
+        {
+            "key": "SprCharacterAttack",
+            "url": "img/character-attack.png",
+            "frameConfig": {
+                "frameWidth": 70,
+                "frameHeight": 50
+            }
+        },
+        {
+            "key": "SprGrassPlatforms",
+            "url": "img/grass-platforms.png",
+            "frameConfig": {
+                "frameWidth": 16,
+                "frameHeight": 16
+            }
+        },
+        {
+            "key": "SprDragon",
+            "url": "img/dragon.png",
+            "frameConfig": {
+                "frameWidth": 120,
+                "frameHeight": 96
+            }
+        }
+    ],
+    "audio": [
+        {
+            "key": "AudioStep",
+            "url": "audio/step.mp3"
+        },
+        {
+            "key": "AudioWind",
+            "url": "audio/wind.mp3"
+        },
+        {
+            "key": "AudioThunder",
+            "url": "audio/thunder.mp3"
+        }
+    ],
     "json": []
 }

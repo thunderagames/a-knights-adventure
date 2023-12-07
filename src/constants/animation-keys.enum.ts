@@ -1,5 +1,6 @@
 enum AnimationKeysEnum {
-    loaderHelmet = 'loaderHelmet'
+    loaderHelmet = 'loaderHelmet',
+    dragonFly = "dragonFly"
 }
 
 export default AnimationKeysEnum
