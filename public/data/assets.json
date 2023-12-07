@@ -1,0 +1,83 @@
+{
+    "image": [
+        {
+            "key": "test",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test1",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test2",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test3",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test4",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test5",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test6",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test7",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test8",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test9",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test0",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test00",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test99",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test88",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test77",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test66",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test55",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test44",
+            "url": "img/loader-pack/loading_bar_full.png"
+        },
+        {
+            "key": "test33",
+            "url": "img/loader-pack/loading_bar_full.png"
+        }
+    ],
+    "spritesheet": [],
+    "audio": [],
+    "json": []
+}
