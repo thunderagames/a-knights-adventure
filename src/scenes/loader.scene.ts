@@ -75,7 +75,7 @@ export class LoaderScene extends Phaser.Scene {
             .setScale(4)
             .play(AnimationKeysEnum.loaderHelmet)
 
-        this.add.text(this.scale.width / 2, 50, 'Knight Warrior', { fontSize: 34, fontStyle: 'bold', shadow: { color: '#FF8', offsetX: -5, offsetY: 2, blur: 9, fill: true }, color: '#919191' }).setOrigin(0.5)
+        this.add.text(this.scale.width / 2, 50, 'KNIGHT WARRIOR', { fontSize: 34, fontStyle: 'bold', shadow: { color: '#FF8', offsetX: -5, offsetY: 2, blur: 9, fill: true }, color: '#919191' }).setOrigin(0.5)
 
         this.load.on(Phaser.Loader.Events.FILE_COMPLETE, () => {
             this.count_loaded_assets++
@@ -91,18 +91,11 @@ export class LoaderScene extends Phaser.Scene {
 
 
         this.load.on(Phaser.Loader.Events.COMPLETE, () => {
-            // let btn_bg = this.add.rectangle(this.cameras.main.centerX, this.cameras.main.centerY + 150, 200, 50, 0xd9e6d1).setInteractive()
-            // let btn_txt = this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 150, 'START', { fontSize: 24, fontStyle: 'bold', color: '0x000' }).setInteractive().setOrigin(0.5).setInteractive()
             let btn_bg = new MenuUtils().creteBtn(this.cameras.main.centerX, this.cameras.main.centerY + 150, 'START', this)
-
 
             btn_bg.on(Phaser.Input.Events.POINTER_DOWN, () => {
                 (<KnightWarriorGame>this.game).dipatchStateAction('resourcesLoaded', null)
             })
-
-            // btn_txt.on(Phaser.Input.Events.POINTER_DOWN, () => {
-            //     (<KnightWarriorGame>this.game).dipatchStateAction('resourcesLoaded', null)
-            // })
 
             this.input.keyboard?.on(Phaser.Input.Keyboard.Events.ANY_KEY_DOWN, () => {
                 (<KnightWarriorGame>this.game).dipatchStateAction('resourcesLoaded', null)

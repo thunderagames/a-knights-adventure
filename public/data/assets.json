@@ -27,6 +27,22 @@
         {
             "key": "ImgThunderaLogoSmall",
             "url": "img/thundera_logo_small.png"
+        },
+        {
+            "key":"ImgCloudsDay1",
+            "url":"img/clouds/day_1.png"
+        },
+        {
+            "key":"ImgCloudsDay2",
+            "url":"img/clouds/day_2.png"
+        },
+        {
+            "key":"ImgCloudsDay3",
+            "url":"img/clouds/day_3.png"
+        },
+        {
+            "key":"ImgCloudsDay4",
+            "url":"img/clouds/day_4.png"
         }
     ],
     "spritesheet": [
@@ -76,6 +92,22 @@
             "frameConfig": {
                 "frameWidth": 120,
                 "frameHeight": 96
+            }
+        },
+        {
+            "key": "SprBackgroundDeco1",
+            "url": "img/background_deco_1.png",
+            "frameConfig": {
+                "frameWidth": 48,
+                "frameHeight": 48
+            }
+        },
+        {
+            "key": "SprDecoration1",
+            "url": "img/decoration_1.png",
+            "frameConfig": {
+                "frameWidth": 32,
+                "frameHeight": 32
             }
         }
     ],

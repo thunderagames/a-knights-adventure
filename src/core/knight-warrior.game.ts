@@ -1,8 +1,6 @@
 import Phaser, { Game } from "phaser";
 import { timer } from "rxjs";
 import GameSceneKeysEnum from "~/constants/game-scene-keys.enum";
-import { GameStateInterface } from "~/constants/game-state.interface";
-import GameStatesEnum from "~/constants/game-states.enum";
 import { GameScene } from "~/scenes/game.scene";
 import { IntroScene } from "~/scenes/intro.scene";
 import { LoaderScene } from "~/scenes/loader.scene";
@@ -58,7 +56,9 @@ export class KnightWarriorGame extends Phaser.Game {
             }
         },
         "GAME_STARTED": {
-            pauseGame: () => { }
+            pauseGame: () => {
+                this.scene.pause(GameSceneKeysEnum.game)
+            }
         },
         "GAME_PAUSED": {
             resumeGame: () => { },
@@ -78,7 +78,7 @@ export class KnightWarriorGame extends Phaser.Game {
                 default: 'arcade',
                 arcade: {
                     gravity: {
-                        y: 16000
+                        y: 1600
                     }
                 }
             },

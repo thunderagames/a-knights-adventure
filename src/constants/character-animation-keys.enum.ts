@@ -1,5 +1,6 @@
 enum CharacterAnimationKeysEnum {
     attack = 'attack',
-    run = "run"
+    run = "run",
+    stand = "stand"
 }
 export default CharacterAnimationKeysEnum
