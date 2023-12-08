@@ -3,9 +3,11 @@ import { timer } from "rxjs";
 import GameSceneKeysEnum from "~/constants/game-scene-keys.enum";
 import { GameStateInterface } from "~/constants/game-state.interface";
 import GameStatesEnum from "~/constants/game-states.enum";
+import { GameScene } from "~/scenes/game.scene";
 import { IntroScene } from "~/scenes/intro.scene";
 import { LoaderScene } from "~/scenes/loader.scene";
 import { MainMenuScene } from "~/scenes/main-menu-.scene";
+import { OptionsScene } from "~/scenes/options.scene";
 
 export class KnightWarriorGame extends Phaser.Game {
 
@@ -27,8 +29,9 @@ export class KnightWarriorGame extends Phaser.Game {
             }
         },
         "INTRODUCTION": {
-            goToMenu: () => { 
+            goToMenu: () => {
                 this.scene.stop(GameSceneKeysEnum.intro)
+
                 timer(250).subscribe(() => {
                     this.scene.start(GameSceneKeysEnum.mainMenu)
                     this.setStatus('ON_MENU')
@@ -36,11 +39,23 @@ export class KnightWarriorGame extends Phaser.Game {
             }
         },
         "ON_MENU": {
-            goToOptions: () => { },
-            goToGame: () => { }
+            goToOptions: () => {
+                this.scene.stop(GameSceneKeysEnum.mainMenu)
+                this.scene.start(GameSceneKeysEnum.options)
+                this.setStatus("ON_OPTIONS")
+            },
+            goToGame: () => {
+                this.scene.stop(GameSceneKeysEnum.mainMenu)
+                this.scene.start(GameSceneKeysEnum.game)
+                this.setStatus("GAME_STARTED")
+            }
         },
         "ON_OPTIONS": {
-            backToMenu: () => { }
+            backToMenu: () => {
+                this.scene.stop(GameSceneKeysEnum.options)
+                this.scene.start(GameSceneKeysEnum.mainMenu)
+                this.setStatus('ON_MENU')
+            }
         },
         "GAME_STARTED": {
             pauseGame: () => { }
@@ -73,7 +88,11 @@ export class KnightWarriorGame extends Phaser.Game {
                 expandParent: true
             },
             pixelArt: true,
-            scene: [LoaderScene, IntroScene, MainMenuScene]
+            scene: [LoaderScene, IntroScene, MainMenuScene, OptionsScene, GameScene],
+            input: {
+                gamepad: true,
+                keyboard: true
+            }
         })
     }
 

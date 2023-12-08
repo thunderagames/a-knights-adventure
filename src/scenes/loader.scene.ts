@@ -9,6 +9,7 @@ import JsonKeysEnum from "~/constants/json-keys.enum";
 import SpritesheetKeysEnum from "~/constants/spritesheet-keys.enum";
 import TextureKeysEnum from "~/constants/texture-keys.enum";
 import { KnightWarriorGame } from "~/core/knight-warrior.game";
+import { MenuUtils } from "~/utils/menu.utils";
 
 
 export class LoaderScene extends Phaser.Scene {
@@ -90,13 +91,24 @@ export class LoaderScene extends Phaser.Scene {
 
 
         this.load.on(Phaser.Loader.Events.COMPLETE, () => {
-            let btn_bg = this.add.rectangle(this.cameras.main.centerX, this.cameras.main.centerY + 150, 200, 50, 0xd9e6d1).setInteractive()
-            let btn_txt  = this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 150, 'START', { fontSize: 24, fontStyle: 'bold', color: '0x000' }).setInteractive().setOrigin(0.5).setInteractive()
+            // let btn_bg = this.add.rectangle(this.cameras.main.centerX, this.cameras.main.centerY + 150, 200, 50, 0xd9e6d1).setInteractive()
+            // let btn_txt = this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 150, 'START', { fontSize: 24, fontStyle: 'bold', color: '0x000' }).setInteractive().setOrigin(0.5).setInteractive()
+            let btn_bg = new MenuUtils().creteBtn(this.cameras.main.centerX, this.cameras.main.centerY + 150, 'START', this)
+
+
             btn_bg.on(Phaser.Input.Events.POINTER_DOWN, () => {
                 (<KnightWarriorGame>this.game).dipatchStateAction('resourcesLoaded', null)
             })
 
-            btn_txt.on(Phaser.Input.Events.POINTER_DOWN, () => {
+            // btn_txt.on(Phaser.Input.Events.POINTER_DOWN, () => {
+            //     (<KnightWarriorGame>this.game).dipatchStateAction('resourcesLoaded', null)
+            // })
+
+            this.input.keyboard?.on(Phaser.Input.Keyboard.Events.ANY_KEY_DOWN, () => {
+                (<KnightWarriorGame>this.game).dipatchStateAction('resourcesLoaded', null)
+            })
+
+            this.input.gamepad?.on(Phaser.Input.Gamepad.Events.BUTTON_DOWN, () => {
                 (<KnightWarriorGame>this.game).dipatchStateAction('resourcesLoaded', null)
             })
         })
@@ -114,6 +126,7 @@ export class LoaderScene extends Phaser.Scene {
 
     create() {
 
+        console.log()
     }
 
     private createLoaderAnimations(): void {

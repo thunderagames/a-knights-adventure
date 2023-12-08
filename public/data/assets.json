@@ -23,6 +23,10 @@
         {
             "key": "ImgThunderaLogo",
             "url": "img/thundera_logo.png"
+        },
+        {
+            "key": "ImgThunderaLogoSmall",
+            "url": "img/thundera_logo_small.png"
         }
     ],
     "spritesheet": [
@@ -87,6 +91,14 @@
         {
             "key": "AudioThunder",
             "url": "audio/thunder.mp3"
+        },
+        {
+            "key": "AudioSwordHit",
+            "url": "audio/sword-hit.mp3"
+        },
+        {
+            "key": "AudioSwordSheath",
+            "url": "audio/sword-from-sheath.mp3"
         }
     ],
     "json": []

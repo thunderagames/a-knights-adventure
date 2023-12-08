@@ -7,7 +7,8 @@ enum TextureKeysEnum {
     ImgCloudsNight2 = "ImgCloudsNight2",
     ImgCloudsNight3 = "ImgCloudsNight3",
     ImgCloudsNight4 = "ImgCloudsNight4",
-    ImgThunderaLogo = "ImgThunderaLogo"
+    ImgThunderaLogo = "ImgThunderaLogo",
+    ImgThunderaLogoSmall = "ImgThunderaLogoSmall"
 }
 
 export default TextureKeysEnum
