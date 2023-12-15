@@ -3,6 +3,7 @@ import { timer } from "rxjs";
 import GameSceneKeysEnum from "~/constants/game-scene-keys.enum";
 import { GameScene } from "~/scenes/game.scene";
 import { IntroScene } from "~/scenes/intro.scene";
+import { KnightHUDScene } from "~/scenes/knight-hud.scene";
 import { LoaderScene } from "~/scenes/loader.scene";
 import { MainMenuScene } from "~/scenes/main-menu-.scene";
 import { OptionsScene } from "~/scenes/options.scene";
@@ -45,6 +46,7 @@ export class KnightWarriorGame extends Phaser.Game {
             goToGame: () => {
                 this.scene.stop(GameSceneKeysEnum.mainMenu)
                 this.scene.start(GameSceneKeysEnum.game)
+                //this.scene.start(GameSceneKeysEnum.KnightHUD)
                 this.setStatus("GAME_STARTED")
             }
         },
@@ -57,7 +59,12 @@ export class KnightWarriorGame extends Phaser.Game {
         },
         "GAME_STARTED": {
             pauseGame: () => {
-                this.scene.pause(GameSceneKeysEnum.game)
+                if (this.scene?.isPaused(GameSceneKeysEnum.game)) {
+                    this.scene.resume(GameSceneKeysEnum.game)
+                } else {
+                    this.scene.pause(GameSceneKeysEnum.game)
+                }
+
             }
         },
         "GAME_PAUSED": {
@@ -69,6 +76,7 @@ export class KnightWarriorGame extends Phaser.Game {
         }
     }
 
+    language = "en"
 
     constructor() {
         super({
@@ -79,7 +87,8 @@ export class KnightWarriorGame extends Phaser.Game {
                 arcade: {
                     gravity: {
                         y: 1600
-                    }
+                    },
+                    debug: false
                 }
             },
             scale: {
@@ -88,12 +97,14 @@ export class KnightWarriorGame extends Phaser.Game {
                 expandParent: true
             },
             pixelArt: true,
-            scene: [LoaderScene, IntroScene, MainMenuScene, OptionsScene, GameScene],
+            scene: [LoaderScene, IntroScene, MainMenuScene, OptionsScene, GameScene, KnightHUDScene],
             input: {
                 gamepad: true,
                 keyboard: true
             }
         })
+
+        this.input.keyboard
     }
 
 

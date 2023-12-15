@@ -1,6 +1,7 @@
 import Phaser from "phaser"
 import AudioKeysEnum from "~/constants/audio-keys-enum"
 import GameSceneKeysEnum from "~/constants/game-scene-keys.enum"
+import JsonKeysEnum from "~/constants/json-keys.enum"
 import TextureKeysEnum from "~/constants/texture-keys.enum"
 import { KnightWarriorGame } from "~/core/knight-warrior.game"
 import { MenuUtils } from "~/utils/menu.utils"
@@ -16,6 +17,9 @@ export class MainMenuScene extends Phaser.Scene {
     }
 
     create() {
+        let json_local = this.cache.json.get(JsonKeysEnum.localData)
+        json_local = json_local[(<KnightWarriorGame>this.game).language]
+
         this.bg_layer1 = this.add.tileSprite(this.cameras.main.worldView.x, this.cameras.main.worldView.y, 0, 0, TextureKeysEnum.ImgCloudsNight1).setOrigin(0)
         this.bg_layer2 = this.add.tileSprite(this.cameras.main.worldView.x, this.cameras.main.worldView.y, 0, 0, TextureKeysEnum.ImgCloudsNight3).setOrigin(0)
         this.bg_layer3 = this.add.tileSprite(this.cameras.main.worldView.x, this.cameras.main.worldView.y, 0, 0, TextureKeysEnum.ImgCloudsNight4).setOrigin(0)
@@ -26,26 +30,29 @@ export class MainMenuScene extends Phaser.Scene {
 
         let btn_x = this.scale.width / 2
         let height = this.scale.height
-        this.utils.creteBtn(btn_x, height / 4 + 50, 'START GAME', this)
+        this.utils.creteBtn(btn_x, height / 4 + 50, json_local.play, this)
             .on(Phaser.Input.Events.POINTER_DOWN, () => {
-                this.sound.play('AudioSwordSheath', { volume: 0.08 });
+                this.sound.play('AudioSwordSheath', { volume: 0.03 });
                 (<KnightWarriorGame>this.game).dipatchStateAction("goToGame", null)
             })
 
-        this.utils.creteBtn(btn_x, height - 50 - (this.scale.height / 4), 'OPTIONS', this)
+        this.utils.creteBtn(btn_x, height - 50 - (this.scale.height / 4), json_local.options, this)
             .on(Phaser.Input.Events.POINTER_DOWN, () => {
-                this.sound.play('AudioSwordSheath', { volume: 0.08 });
+                this.sound.play('AudioSwordSheath', { volume: 0.03 });
                 (<KnightWarriorGame>this.game).dipatchStateAction("goToOptions", null)
             })
+
 
         this.add.image(this.scale.width / 2, this.scale.height - 60, TextureKeysEnum.ImgThunderaLogoSmall)
             .setScale(0.5)
             .setAlpha(0.6)
 
+      
+
         let title = this.add.text(
             this.scale.width / 2,
             70,
-            'KNIGHT WARRIOR',
+            json_local.title,
             {
                 fontSize: 34,
                 fontStyle: 'bold',
@@ -69,7 +76,7 @@ export class MainMenuScene extends Phaser.Scene {
     }
 
     update() {
-        this.bg_layer1.tilePositionX += 0.07
+        this.bg_layer1.tilePositionX += 0.07 
         this.bg_layer2.tilePositionX += 0.1
         this.bg_layer3.tilePositionX += 0.15
     }

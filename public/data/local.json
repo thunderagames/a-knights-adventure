@@ -1,0 +1,22 @@
+{
+    "es": {
+        "loader": "Cargando #c de #t recursos...",
+        "title": "Una Aventura de Caballeros",
+        "options": "OPCIONES",
+        "play": "JUGAR",
+        "start": "INICIAR",
+        "language": "Idioma ",
+        "backToMenu": "VOLVER AL MENU",
+        "lifeHud":"Vida"
+    },
+    "en": {
+        "loader": "Loading #c of #t assets...",
+        "title": "A Knight's Adventure",
+        "options": "OPTIONS",
+        "play": "PLAY",
+        "start": "START",
+        "language": "Language ",
+        "backToMenu": "BACK TO MENU",
+        "lifeHud":"Life"
+    }
+}

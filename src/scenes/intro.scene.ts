@@ -64,8 +64,11 @@ export class IntroScene extends Phaser.Scene {
         this.sound.play(AudioKeysEnum.AudioWind, { volume: 0.1, loop: false })
         this.createAnimations()
 
-        this.img_logo_thundera = this.add.image(this.scale.width / 2 + 150, this.scale.height - 100, TextureKeysEnum.ImgThunderaLogo).setOrigin(0.5).setDepth(3000).setScale(0.15).setAlpha(0)
-        this.img_logo_thundera.setTintFill(0x080f29)
+        this.img_logo_thundera = this.add.image(this.scale.width / 2 + 150, this.scale.height - 100, TextureKeysEnum.ImgThunderaLogo)
+            .setOrigin(0.5)
+            .setDepth(3000)
+            .setScale(0.25)
+            .setAlpha(0)
 
         this.bg_layer1 = this.add.tileSprite(this.cameras.main.worldView.x, this.cameras.main.worldView.y, 0, 0, TextureKeysEnum.ImgCloudsNight1)
         this.bg_layer2 = this.add.tileSprite(this.cameras.main.worldView.x, this.cameras.main.worldView.y, 0, 0, TextureKeysEnum.ImgCloudsNight2)
@@ -87,14 +90,16 @@ export class IntroScene extends Phaser.Scene {
 
         this.char.setPosition(this.cameras.main.getBounds().x + 20, this.cameras.main.getBounds().bottom - 16)
         this.char.setVelocityX(this.character_speed)
-        this.char.setOrigin(0, 1)
+        this.char.setOrigin(0.5, 1)
+        this.char.setSize(20, 40)
+        //this.char.setOffset(0)
         this.char.body.setAllowGravity(false)
         this.char.play(CharacterAnimationKeysEnum.run)
 
         this.spr_dragon = this.physics.add.sprite(0, 0, SpritesheetKeysEnum.SprDragon)
         this.spr_dragon.play(AnimationKeysEnum.dragonFly)
         this.spr_dragon.body.setAllowGravity(false)
-        this.spr_dragon.setScale(0.8)
+        this.spr_dragon.setScale(1)
         this.spr_dragon.setAlpha(0.8)
         this.spr_dragon.setDepth(2000)
 
@@ -142,7 +147,7 @@ export class IntroScene extends Phaser.Scene {
         this.anims.create({
             key: CharacterAnimationKeysEnum.attack,
             frames: this.anims.generateFrameNames(SpritesheetKeysEnum.SprCharacterAttack, { frames: [0, 1, 2, 3] }),
-            frameRate: 10,
+            frameRate: 8,
             repeat: 0
         })
 
@@ -153,6 +158,20 @@ export class IntroScene extends Phaser.Scene {
             repeat: -1
         })
 
+        this.anims.create({
+            key: CharacterAnimationKeysEnum.jump,
+            frames: this.anims.generateFrameNames(SpritesheetKeysEnum.SprCharacterJump),
+            frameRate: 10,
+            repeat: 0
+        })
+
+
+        this.anims.create({
+            key: CharacterAnimationKeysEnum.fall,
+            frames: this.anims.generateFrameNames(SpritesheetKeysEnum.SprCharacterFall),
+            frameRate: 10,
+            repeat: 0
+        })
 
         this.anims.create({
             key: AnimationKeysEnum.dragonFly,
@@ -180,6 +199,7 @@ export class IntroScene extends Phaser.Scene {
                     repeat: 1,
                     onComplete: () => {
                         this.thunder_particles.destroy(true)
+                        this.cameras.main.flash()
                     }
                 })
 

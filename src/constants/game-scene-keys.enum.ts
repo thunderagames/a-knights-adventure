@@ -3,7 +3,8 @@ enum GameSceneKeysEnum {
     intro = "intro",
     mainMenu = "mainMenu",
     options = "options",
-    game = "game"
+    game = "game",
+    KnightHUD = "KnightHUD"
 }
 
 export default GameSceneKeysEnum

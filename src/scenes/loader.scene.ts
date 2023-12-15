@@ -19,6 +19,8 @@ export class LoaderScene extends Phaser.Scene {
     loader_assets_label!: Phaser.GameObjects.Text;
     bg_bar_progress!: Phaser.GameObjects.Sprite;
     filled_bar_progress!: Phaser.GameObjects.Sprite;
+    game_title!: Phaser.GameObjects.Text;
+    local_data: any;
 
     constructor() {
         super({
@@ -75,7 +77,7 @@ export class LoaderScene extends Phaser.Scene {
             .setScale(4)
             .play(AnimationKeysEnum.loaderHelmet)
 
-        this.add.text(this.scale.width / 2, 50, 'KNIGHT WARRIOR', { fontSize: 34, fontStyle: 'bold', shadow: { color: '#FF8', offsetX: -5, offsetY: 2, blur: 9, fill: true }, color: '#919191' }).setOrigin(0.5)
+        this.game_title = this.add.text(this.scale.width / 2, 50, 'KNIGHT WARRIOR', { fontSize: 34, fontStyle: 'bold', shadow: { color: '#FF8', offsetX: -5, offsetY: 2, blur: 9, fill: true }, color: '#919191' }).setOrigin(0.5)
 
         this.load.on(Phaser.Loader.Events.FILE_COMPLETE, () => {
             this.count_loaded_assets++
@@ -91,7 +93,11 @@ export class LoaderScene extends Phaser.Scene {
 
 
         this.load.on(Phaser.Loader.Events.COMPLETE, () => {
-            let btn_bg = new MenuUtils().creteBtn(this.cameras.main.centerX, this.cameras.main.centerY + 150, 'START', this)
+            this.local_data = this.cache.json.get("local-data")
+            this.local_data = this.local_data[(<KnightWarriorGame>this.game).language]
+
+            
+            let btn_bg = new MenuUtils().creteBtn(this.cameras.main.centerX, this.cameras.main.centerY + 150, this.local_data.start, this)
 
             btn_bg.on(Phaser.Input.Events.POINTER_DOWN, () => {
                 (<KnightWarriorGame>this.game).dipatchStateAction('resourcesLoaded', null)
@@ -118,8 +124,9 @@ export class LoaderScene extends Phaser.Scene {
     }
 
     create() {
-
-        console.log()
+        // this.local_data = this.cache.json.get("local-data")
+        // this.local_data = this.local_data[(<KnightWarriorGame>this.game).language]
+        this.game_title.text = this.local_data.title
     }
 
     private createLoaderAnimations(): void {

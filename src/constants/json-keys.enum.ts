@@ -1,5 +1,6 @@
 enum JsonKeysEnum {
-    assets = "assets"
+    assets = "assets",
+    localData = "local-data"
 }
 
 export default JsonKeysEnum

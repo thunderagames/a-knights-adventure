@@ -29,53 +29,88 @@
             "url": "img/thundera_logo_small.png"
         },
         {
-            "key":"ImgCloudsDay1",
-            "url":"img/clouds/day_1.png"
+            "key": "ImgCloudsDay1",
+            "url": "img/clouds/day_1.png"
         },
         {
-            "key":"ImgCloudsDay2",
-            "url":"img/clouds/day_2.png"
+            "key": "ImgCloudsDay2",
+            "url": "img/clouds/day_2.png"
         },
         {
-            "key":"ImgCloudsDay3",
-            "url":"img/clouds/day_3.png"
+            "key": "ImgCloudsDay3",
+            "url": "img/clouds/day_3.png"
         },
         {
-            "key":"ImgCloudsDay4",
-            "url":"img/clouds/day_4.png"
+            "key": "ImgCloudsDay4",
+            "url": "img/clouds/day_4.png"
+        },
+        {
+            "key": "ImgBackgroundRocks",
+            "url": "img/bg_rocks.png"
+        },
+        {
+            "key": "ImgSword",
+            "url": "img/sword.png"
+        },
+        {
+            "key": "ImgCharHUDKey",
+            "url": "img/knight_hud/key.png"
+        },
+        {
+            "key": "ImgCharHUDSword",
+            "url": "img/knight_hud/sword.png"
+        },
+        {
+            "key": "ImgEnnemySwitch",
+            "url": "img/ennemy_switch.png"
+        },
+        {
+            "key": "ImgFlagUsa",
+            "url": "img/us.png"
+        },
+        {
+            "key": "ImgFlagSpain",
+            "url": "img/es.png"
         }
     ],
     "spritesheet": [
         {
             "key": "SprCharacterStand",
-            "url": "img/character.png",
+            "url": "img/knight/_Idle.png",
             "frameConfig": {
-                "frameWidth": 25,
-                "frameHeight": 40
+                "frameWidth": 120,
+                "frameHeight": 80
             }
         },
         {
             "key": "SprCharacterRun",
-            "url": "img/character-run.png",
+            "url": "img/knight/_Run.png",
             "frameConfig": {
-                "frameWidth": 30,
-                "frameHeight": 40
+                "frameWidth": 120,
+                "frameHeight": 80
             }
         },
         {
             "key": "SprCharacterJump",
-            "url": "img/character-jump.png",
+            "url": "img/knight/_Jump.png",
             "frameConfig": {
-                "frameWidth": 30,
-                "frameHeight": 40
+                "frameWidth": 120,
+                "frameHeight": 80
+            }
+        },  {
+            "key": "SprCharacterFall",
+            "url": "img/knight/_Fall.png",
+            "frameConfig": {
+                "frameWidth": 120,
+                "frameHeight": 80
             }
         },
         {
             "key": "SprCharacterAttack",
-            "url": "img/character-attack.png",
+            "url": "img/knight/_Attack.png",
             "frameConfig": {
-                "frameWidth": 70,
-                "frameHeight": 50
+                "frameWidth": 120,
+                "frameHeight": 80
             }
         },
         {
@@ -109,6 +144,54 @@
                 "frameWidth": 32,
                 "frameHeight": 32
             }
+        },
+        {
+            "key": "SprMinotaurStand",
+            "url": "img/minotauro_arghh.png",
+            "frameConfig": {
+                "frameWidth": 48,
+                "frameHeight": 48
+            }
+        },
+        {
+            "key": "SprMinotaurRun",
+            "url": "img/minotauro_run.png",
+            "frameConfig": {
+                "frameWidth": 48,
+                "frameHeight": 48
+            }
+        },
+        {
+            "key": "SprMinotaurDead",
+            "url": "img/minotauro_dead.png",
+            "frameConfig": {
+                "frameWidth": 48,
+                "frameHeight": 48
+            }
+        },
+        {
+            "key": "SprMinotaurAttack",
+            "url": "img/minotauro_attack.png",
+            "frameConfig": {
+                "frameWidth": 48,
+                "frameHeight": 48
+            }
+        },
+        {
+            "key": "SprCharacterHUDKeyIcon",
+            "url": "img/knight_hud/key_icon.png",
+            "frameConfig": {
+                "frameWidth": 17,
+                "frameHeight": 16
+            }
+        },
+        {
+            "key": "SprCharacterHUDLifeBar",
+            "url": "img/knight_hud/life_bar.png",
+            "frameConfig": {
+                "frameWidth": 46,
+                "frameHeight": 17
+            }
         }
     ],
     "audio": [
@@ -133,5 +216,10 @@
             "url": "audio/sword-from-sheath.mp3"
         }
     ],
-    "json": []
+    "json": [
+        {
+            "key": "local-data",
+            "url": "data/local.json"
+        }
+    ]
 }
